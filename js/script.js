@@ -9,7 +9,7 @@ var choice1 = document.querySelector('#choice1')
 var choice2 = document.querySelector('#choice2')
 var choice3 = document.querySelector('#choice3')
 var choice4 = document.querySelector('#choice4')
-var allscores = localStorage.getItem("entries") || [];
+var allscores = JSON.parse(localStorage.getItem("entries")) || [];
 var score = 0;
 
 
