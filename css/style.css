@@ -1,3 +1,18 @@
 .hide {
     display: none;
 }
+
+body {
+    background-color: #ad9b73;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    width: 100%;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+/* timer count */
+.timer {
+    color: red;
+    
+}

@@ -9,6 +9,8 @@ var choice1 = document.querySelector('#choice1')
 var choice2 = document.querySelector('#choice2')
 var choice3 = document.querySelector('#choice3')
 var choice4 = document.querySelector('#choice4')
+var allscores = localStorage.getItem("entries") || [];
+var score = 0;
 
 
 // variable for the questions and answers
@@ -70,7 +72,9 @@ function nextquestion() {
 // event listener for choices
 choice1.addEventListener("click", function (e) {
     console.log(e.target.textContent)
-    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") }
+    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!")
+    score += 1;
+}
     else { alert("incorrect answer") }
     questioncounter++
     if (questioncounter === 4) {
@@ -80,7 +84,9 @@ choice1.addEventListener("click", function (e) {
 })
 choice2.addEventListener("click", function (e) {
     console.log(e.target.textContent)
-    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") }
+    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") 
+    score += 1;
+}
     else { alert("incorrect answer") }
     questioncounter++
     if (questioncounter === 4) {
@@ -90,7 +96,9 @@ choice2.addEventListener("click", function (e) {
 })
 choice3.addEventListener("click", function (e) {
     console.log(e.target.textContent)
-    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") }
+    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") 
+    score += 1;
+}
     else { alert("incorrect answer") }
     questioncounter++
     if (questioncounter === 4) {
@@ -100,7 +108,9 @@ choice3.addEventListener("click", function (e) {
 })
 choice4.addEventListener("click", function (e) {
     console.log(e.target.textContent)
-    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") }
+    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") 
+    score += 1;
+}
     else { alert("incorrect answer") }
     questioncounter++
     if (questioncounter === 4) {
