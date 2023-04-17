@@ -27,7 +27,11 @@ var quizquestions = [
         question: "What is an array",
         choices: ["an arrow used in js", "multiple values stored in a single variable", "a single variable", "a type of integar"],
         answer: "multiple values stored in a single variable"
-    }
+    },
+    { question: "What is DOM",
+        choices: ["document object model", "document one model", "champagne", "days on market"],
+        answer: "document object model"
+     }
 ];
 
 
@@ -49,6 +53,7 @@ startButton.addEventListener("click", function () {
 
         if (secondsLeft === 0) {
             clearInterval(time)
+            timeOut()
         }
     }, 1000);
 })
@@ -97,8 +102,8 @@ choice4.addEventListener("click", function (e) {
 // alerts user
 function timeOut() {
     timerInterval.textContent = "---";
-    clearInterval(time);
-    confirm("You ran out of time. Better luck next time.");
+    // clearInterval(time);
+   confirm("You ran out of time. Better luck next time.");
     if (confirm) {
         location.reload();
     };
