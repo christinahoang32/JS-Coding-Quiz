@@ -1,8 +1,6 @@
 var startButton = document.querySelector('#start-button');
 var timerInterval = document.querySelector(".time-left");
 var highScore = document.querySelector("#score-block");
-var mainEl = document.querySelector("main");
-var head = document.getElementsByTagName("header");
 var saveBttn = document.querySelector("#saveBttn");
 var question = document.querySelector('#h1')
 var choice1 = document.querySelector('#choice1')
@@ -140,8 +138,12 @@ function storeEntries() {
 saveBttn.addEventListener("click", function (event) {
     event.preventDefault;
     var initialsInput = document.querySelector("#initials");
-    var userScore = initialsInput + " " + score;
-    if (initialsInput === "") {
+    var initials = initialsInput.value.trim();
+    var userScore =  {
+        score: score,
+        initials: initials,
+      };
+    if (initials === "") {
         alert("Must input initials to save score.")
         return;
     }
@@ -150,8 +152,17 @@ saveBttn.addEventListener("click", function (event) {
     location.reload();
 });
 
+// display score
+const score = JSON.parse(localStorage.getItem('myScore'));
+const scoreDiv = document.getElementById('score');
+scoreDiv.innerHTML = `<p>Name: ${score.name}</p><p>Email: ${score.email}</p>`;
+
+
+
+
 // end the quiz
 function quizEnd(){
     console.log("Quiz IS OVER");
     highScore.classList.remove("hide");
 }
+

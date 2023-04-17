@@ -14,5 +14,6 @@ body {
 /* timer count */
 .timer {
     color: red;
+    background-color: black;
     
 }
