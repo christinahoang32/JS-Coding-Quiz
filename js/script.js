@@ -24,11 +24,11 @@ var quizquestions = [
         answer: "false"
     },
     {
-        question: "What is an array",
+        question: "What is an array?",
         choices: ["an arrow used in js", "multiple values stored in a single variable", "a single variable", "a type of integar"],
         answer: "multiple values stored in a single variable"
     },
-    { question: "What is DOM",
+    { question: "What is DOM?",
         choices: ["document object model", "document one model", "champagne", "days on market"],
         answer: "document object model"
      }
@@ -73,6 +73,9 @@ choice1.addEventListener("click", function (e) {
     if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") }
     else { alert("incorrect answer") }
     questioncounter++
+    if (questioncounter === 4) {
+        quizEnd();
+    }
     nextquestion()
 })
 choice2.addEventListener("click", function (e) {
@@ -80,6 +83,9 @@ choice2.addEventListener("click", function (e) {
     if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") }
     else { alert("incorrect answer") }
     questioncounter++
+    if (questioncounter === 4) {
+        quizEnd();
+    }
     nextquestion()
 })
 choice3.addEventListener("click", function (e) {
@@ -87,6 +93,9 @@ choice3.addEventListener("click", function (e) {
     if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") }
     else { alert("incorrect answer") }
     questioncounter++
+    if (questioncounter === 4) {
+        quizEnd();
+    }
     nextquestion()
 })
 choice4.addEventListener("click", function (e) {
@@ -94,6 +103,9 @@ choice4.addEventListener("click", function (e) {
     if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") }
     else { alert("incorrect answer") }
     questioncounter++
+    if (questioncounter === 4) {
+        quizEnd();
+    }
     nextquestion()
 })
 
@@ -128,3 +140,8 @@ saveBttn.addEventListener("click", function (event) {
     location.reload();
 });
 
+// end the quiz
+function quizEnd(){
+    console.log("Quiz IS OVER");
+    highScore.classList.remove("hide");
+}
