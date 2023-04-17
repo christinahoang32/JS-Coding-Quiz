@@ -153,9 +153,7 @@ saveBttn.addEventListener("click", function (event) {
 });
 
 // display score
-const score = JSON.parse(localStorage.getItem('myScore'));
-const scoreDiv = document.getElementById('score');
-scoreDiv.innerHTML = `<p>Name: ${score.name}</p><p>Email: ${score.email}</p>`;
+
 
 
 
