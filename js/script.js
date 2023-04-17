@@ -129,7 +129,7 @@ function storeEntries() {
 // saves score/initial 
 saveBttn.addEventListener("click", function (event) {
     event.preventDefault;
-    var initialsInput = input.value.trim();
+    var initialsInput = document.querySelector("#initials");
     var userScore = initialsInput + " " + score;
     if (initialsInput === "") {
         alert("Must input initials to save score.")
