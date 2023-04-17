@@ -59,34 +59,34 @@ function nextquestion() {
     choice1.textContent = quizquestions[questioncounter].choices[0]
     choice2.textContent = quizquestions[questioncounter].choices[1]
     choice3.textContent = quizquestions[questioncounter].choices[2]
-    choice4.textContent = quizquesetions[questioncounter].choices[3]
+    choice4.textContent = quizquestions[questioncounter].choices[3]
 }
 
 // event listener for choices
 choice1.addEventListener("click", function (e) {
     console.log(e.target.textContent)
-    if (e.target.textContent == quizquestions[0].answer) { alert("Correct Answer!") }
+    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") }
     else { alert("incorrect answer") }
     questioncounter++
     nextquestion()
 })
 choice2.addEventListener("click", function (e) {
     console.log(e.target.textContent)
-    if (e.target.textContent == quizquestions[1].answer) { alert("Correct Answer!") }
+    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") }
     else { alert("incorrect answer") }
     questioncounter++
     nextquestion()
 })
 choice3.addEventListener("click", function (e) {
     console.log(e.target.textContent)
-    if (e.target.textContent == quizquestions[2].answer) { alert("Correct Answer!") }
+    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") }
     else { alert("incorrect answer") }
     questioncounter++
     nextquestion()
 })
 choice4.addEventListener("click", function (e) {
     console.log(e.target.textContent)
-    if (e.target.textContent == quizquestions[3].answer) { alert("Correct Answer!") }
+    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") }
     else { alert("incorrect answer") }
     questioncounter++
     nextquestion()
