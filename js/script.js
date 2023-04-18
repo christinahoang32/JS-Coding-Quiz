@@ -9,7 +9,8 @@ var choice3 = document.querySelector('#choice3')
 var choice4 = document.querySelector('#choice4')
 var allscores = JSON.parse(localStorage.getItem("entries")) || [];
 var score = 0;
-
+var scoreListEl = document.getElementById("score-list");
+var finalscore = document.querySelector(".finalscore")
 
 // variable for the questions and answers
 var quizquestions = [
@@ -28,10 +29,11 @@ var quizquestions = [
         choices: ["an arrow used in js", "multiple values stored in a single variable", "a single variable", "a type of integar"],
         answer: "multiple values stored in a single variable"
     },
-    { question: "What is DOM?",
+    {
+        question: "What is DOM?",
         choices: ["document object model", "document one model", "champagne", "days on market"],
         answer: "document object model"
-     }
+    }
 ];
 
 
@@ -70,51 +72,62 @@ function nextquestion() {
 // event listener for choices
 choice1.addEventListener("click", function (e) {
     console.log(e.target.textContent)
-    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!")
-    score += 1;
-}
+    if (e.target.textContent == quizquestions[questioncounter].answer) {
+        alert("Correct Answer!")
+        score += 1;
+    }
     else { alert("incorrect answer") }
     questioncounter++
     if (questioncounter === 4) {
         quizEnd();
+    } else {
+        nextquestion()
     }
-    nextquestion()
 })
 choice2.addEventListener("click", function (e) {
     console.log(e.target.textContent)
-    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") 
-    score += 1;
-}
+    if (e.target.textContent == quizquestions[questioncounter].answer) {
+        alert("Correct Answer!")
+        score += 1;
+    }
     else { alert("incorrect answer") }
     questioncounter++
     if (questioncounter === 4) {
         quizEnd();
+    } else {
+        nextquestion()
     }
-    nextquestion()
 })
 choice3.addEventListener("click", function (e) {
     console.log(e.target.textContent)
-    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") 
-    score += 1;
-}
+    if (e.target.textContent == quizquestions[questioncounter].answer) {
+        alert("Correct Answer!")
+        score += 1;
+    }
     else { alert("incorrect answer") }
     questioncounter++
     if (questioncounter === 4) {
         quizEnd();
+    } else {
+        nextquestion()
     }
-    nextquestion()
 })
 choice4.addEventListener("click", function (e) {
     console.log(e.target.textContent)
-    if (e.target.textContent == quizquestions[questioncounter].answer) { alert("Correct Answer!") 
-    score += 1;
-}
-    else { alert("incorrect answer") }
+    if (e.target.textContent == quizquestions[questioncounter].answer) {
+        alert("Correct Answer!")
+        score += 1;
+    }
+    else{ 
+        alert("incorrect answer") 
+    }
     questioncounter++
     if (questioncounter === 4) {
         quizEnd();
+    } else {
+        nextquestion()
     }
-    nextquestion()
+
 })
 
 
@@ -123,7 +136,7 @@ choice4.addEventListener("click", function (e) {
 function timeOut() {
     timerInterval.textContent = "---";
     // clearInterval(time);
-   confirm("You ran out of time. Better luck next time.");
+    confirm("You ran out of time. Better luck next time.");
     if (confirm) {
         location.reload();
     };
@@ -136,13 +149,15 @@ function storeEntries() {
 
 // saves score/initial 
 saveBttn.addEventListener("click", function (event) {
-    event.preventDefault;
+    event.preventDefault();
     var initialsInput = document.querySelector("#initials");
     var initials = initialsInput.value.trim();
-    var userScore =  {
+    console.log("end score", score);
+    // finalscore.textContent = score;
+    var userScore = {
         score: score,
         initials: initials,
-      };
+    };
     if (initials === "") {
         alert("Must input initials to save score.")
         return;
@@ -154,13 +169,9 @@ saveBttn.addEventListener("click", function (event) {
 
 // display score
 
-
-
-
-
 // end the quiz
-function quizEnd(){
+function quizEnd() {
+    finalscore.textContent = score;
     console.log("Quiz IS OVER");
     highScore.classList.remove("hide");
 }
-
